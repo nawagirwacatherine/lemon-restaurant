@@ -42,6 +42,8 @@
 
 // export default App
 
+import "./App.css"
+
 import { useState } from "react";
 
 
@@ -51,7 +53,7 @@ function App(){
   const handleSubmit = (e) =>{
     e.preventDefault();
     setName("");
-    console.log("Form submitted!");
+    // console.log("Form submitted!");
   }
   return(
     <div className="App">
