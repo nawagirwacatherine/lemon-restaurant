@@ -68,6 +68,11 @@ function App(){
        name="name" 
        value={name} onChange={e => setName(e.target)} />
      </div>
+
+     <div className="field">
+      <label htmlFor="range">Score:</label>
+      <input type="range" min="0" max="10" />
+     </div>
      <button disabled={!name} type="submit">Submit</button>
         </fieldset>
 
