@@ -50,7 +50,7 @@ import { useState } from "react";
 function App(){
   const[name, setName]= useState("");
   const[score, setScore]= useState("10");
-  const[comment, setComment] = useState("");
+   const[comment, setComment]= useState(";")
 
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -60,8 +60,8 @@ function App(){
     }
     console.log("Form submitted!");
     setName("");
-    setComment("");
     setScore("10");
+    setComment("");
     // console.log("Form submitted!");
   }
   return(
