@@ -49,10 +49,19 @@ import { useState } from "react";
 
 function App(){
   const[name, setName]= useState("");
+  const[score, setScore]= useState("10");
+  const[comment, setComment] = useState("");
 
   const handleSubmit = (e) =>{
     e.preventDefault();
+    if (Number(score) <= 5 && comment.length <= 10){
+      alert("Please provide a comment explaining why the exprience was poor");
+      return;
+    }
+    console.log("Form submitted!");
     setName("");
+    setComment("");
+    setScore("10");
     // console.log("Form submitted!");
   }
   return(
@@ -66,13 +75,25 @@ function App(){
       type="text"
        placeholder="Name" 
        name="name" 
-       value={name} onChange={e => setName(e.target)} />
+       value={name} onChange={e => setName(e.target.value)} />
      </div>
 
      <div className="field">
-      <label htmlFor="range">Score:</label>
-      <input type="range" min="0" max="10" />
+      <label htmlFor="range">Score:{score}</label>
+      <input type="range" 
+      min="0"
+       max="10" 
+       value={score}
+        onChange={e => setScore(e.target.value)} />
      </div>
+
+     <div className="Field">
+ <label>
+comment:
+<textarea value={comment} onChange = {e => setComment(e.target.value)}/>
+ </label>
+     </div>
+
      <button disabled={!name} type="submit">Submit</button>
         </fieldset>
 
